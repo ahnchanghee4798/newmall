@@ -129,6 +129,8 @@ public class FoodCooking  {
         FoodCooking foodCooking = new FoodCooking();
         repository().save(foodCooking);
 
+        OrderRejected orderRejected = new OrderRejected(foodCooking);
+        orderRejected.publishAfterCommit();
         */
 
         /** Example 2:  finding and process
@@ -138,6 +140,8 @@ public class FoodCooking  {
             foodCooking // do something
             repository().save(foodCooking);
 
+            OrderRejected orderRejected = new OrderRejected(foodCooking);
+            orderRejected.publishAfterCommit();
 
          });
         */

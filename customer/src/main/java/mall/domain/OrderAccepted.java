@@ -9,6 +9,13 @@ import java.util.*;
 public class OrderAccepted extends AbstractEvent {
 
     private Long id;
+    private String status;
+    private String foodId;
+    private String orderId;
+    private Object options;
+    private String qty;
+    private String storeId;
+    private String customerId;
 }
 
 
