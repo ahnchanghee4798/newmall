@@ -123,6 +123,35 @@ public class FoodCooking  {
 
         
     }
+    public static void updateStatus(Paid paid){
+
+        /** Example 1:  new item 
+        FoodCooking foodCooking = new FoodCooking();
+        repository().save(foodCooking);
+
+        OrderAccepted orderAccepted = new OrderAccepted(foodCooking);
+        orderAccepted.publishAfterCommit();
+        OrderRejected orderRejected = new OrderRejected(foodCooking);
+        orderRejected.publishAfterCommit();
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(paid.get???()).ifPresent(foodCooking->{
+            
+            foodCooking // do something
+            repository().save(foodCooking);
+
+            OrderAccepted orderAccepted = new OrderAccepted(foodCooking);
+            orderAccepted.publishAfterCommit();
+            OrderRejected orderRejected = new OrderRejected(foodCooking);
+            orderRejected.publishAfterCommit();
+
+         });
+        */
+
+        
+    }
     public static void orderCencel(OrderCanceled orderCanceled){
 
         /** Example 1:  new item 
