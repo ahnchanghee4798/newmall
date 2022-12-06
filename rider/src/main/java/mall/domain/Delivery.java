@@ -1,8 +1,5 @@
 package mall.domain;
 
-import mall.domain.Picked;
-import mall.domain.Delivered;
-import mall.domain.ConfirmDelivered;
 import mall.RiderApplication;
 import javax.persistence.*;
 import java.util.List;
@@ -47,21 +44,6 @@ public class Delivery  {
 
     @PostPersist
     public void onPostPersist(){
-
-
-        Picked picked = new Picked(this);
-        picked.publishAfterCommit();
-
-
-
-        Delivered delivered = new Delivered(this);
-        delivered.publishAfterCommit();
-
-
-
-        ConfirmDelivered confirmDelivered = new ConfirmDelivered(this);
-        confirmDelivered.publishAfterCommit();
-
     }
 
     public static DeliveryRepository repository(){
@@ -71,6 +53,21 @@ public class Delivery  {
 
 
 
+    public void pick(){
+        Picked picked = new Picked(this);
+        picked.publishAfterCommit();
+
+    }
+    public void delivery(){
+        Delivered delivered = new Delivered(this);
+        delivered.publishAfterCommit();
+
+    }
+    public void confirmDelivery(){
+        ConfirmDelivered confirmDelivered = new ConfirmDelivered(this);
+        confirmDelivered.publishAfterCommit();
+
+    }
 
     public static void orderinfoCopy(OrderPlaced orderPlaced){
 

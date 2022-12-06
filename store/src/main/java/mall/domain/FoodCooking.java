@@ -1,9 +1,6 @@
 package mall.domain;
 
 import mall.domain.OrderAccepted;
-import mall.domain.OrderRejected;
-import mall.domain.CookStarted;
-import mall.domain.CookFinished;
 import mall.StoreApplication;
 import javax.persistence.*;
 import java.util.List;
@@ -77,21 +74,6 @@ public class FoodCooking  {
         OrderAccepted orderAccepted = new OrderAccepted(this);
         orderAccepted.publishAfterCommit();
 
-
-
-        OrderRejected orderRejected = new OrderRejected(this);
-        orderRejected.publishAfterCommit();
-
-
-
-        CookStarted cookStarted = new CookStarted(this);
-        cookStarted.publishAfterCommit();
-
-
-
-        CookFinished cookFinished = new CookFinished(this);
-        cookFinished.publishAfterCommit();
-
     }
 
     public static FoodCookingRepository repository(){
@@ -101,6 +83,21 @@ public class FoodCooking  {
 
 
 
+    public void accept(){
+        OrderRejected orderRejected = new OrderRejected(this);
+        orderRejected.publishAfterCommit();
+
+    }
+    public void start(){
+        CookStarted cookStarted = new CookStarted(this);
+        cookStarted.publishAfterCommit();
+
+    }
+    public void cook(){
+        CookFinished cookFinished = new CookFinished(this);
+        cookFinished.publishAfterCommit();
+
+    }
 
     public static void orderinfoCopy(OrderPlaced orderPlaced){
 

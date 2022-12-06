@@ -18,7 +18,6 @@ public class OrderUpdated extends AbstractEvent {
     private Integer qty;
     private String orderId;
     private String status;
-    private String status;
 
     public OrderUpdated(Order aggregate){
         super(aggregate);

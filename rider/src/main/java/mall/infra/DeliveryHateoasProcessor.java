@@ -11,6 +11,9 @@ public class DeliveryHateoasProcessor implements RepresentationModelProcessor<En
 
     @Override
     public EntityModel<Delivery> process(EntityModel<Delivery> model) {
+        model.add(Link.of(model.getRequiredLink("self").getHref() + "/pick").withRel("pick"));
+        model.add(Link.of(model.getRequiredLink("self").getHref() + "/delivery").withRel("delivery"));
+        model.add(Link.of(model.getRequiredLink("self").getHref() + "/confirmdelivery").withRel("confirmdelivery"));
 
         
         return model;

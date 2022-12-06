@@ -21,6 +21,60 @@ public class FoodCookingController {
 
 
 
+    @RequestMapping(value = "foodCookings/{id}/accept",
+        method = RequestMethod.PUT,
+        produces = "application/json;charset=UTF-8")
+    public FoodCooking accept(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
+            System.out.println("##### /foodCooking/accept  called #####");
+            Optional<FoodCooking> optionalFoodCooking = foodCookingRepository.findById(id);
+            
+            optionalFoodCooking.orElseThrow(()-> new Exception("No Entity Found"));
+            FoodCooking foodCooking = optionalFoodCooking.get();
+            foodCooking.accept();
+            
+            foodCookingRepository.save(foodCooking);
+            return foodCooking;
+            
+    }
+    
+
+
+
+    @RequestMapping(value = "foodCookings/{id}/start",
+        method = RequestMethod.PUT,
+        produces = "application/json;charset=UTF-8")
+    public FoodCooking start(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
+            System.out.println("##### /foodCooking/start  called #####");
+            Optional<FoodCooking> optionalFoodCooking = foodCookingRepository.findById(id);
+            
+            optionalFoodCooking.orElseThrow(()-> new Exception("No Entity Found"));
+            FoodCooking foodCooking = optionalFoodCooking.get();
+            foodCooking.start();
+            
+            foodCookingRepository.save(foodCooking);
+            return foodCooking;
+            
+    }
+    
+
+
+
+    @RequestMapping(value = "foodCookings/{id}/cook",
+        method = RequestMethod.PUT,
+        produces = "application/json;charset=UTF-8")
+    public FoodCooking cook(@PathVariable(value = "id") Long id, HttpServletRequest request, HttpServletResponse response) throws Exception {
+            System.out.println("##### /foodCooking/cook  called #####");
+            Optional<FoodCooking> optionalFoodCooking = foodCookingRepository.findById(id);
+            
+            optionalFoodCooking.orElseThrow(()-> new Exception("No Entity Found"));
+            FoodCooking foodCooking = optionalFoodCooking.get();
+            foodCooking.cook();
+            
+            foodCookingRepository.save(foodCooking);
+            return foodCooking;
+            
+    }
+    
 
 
 
