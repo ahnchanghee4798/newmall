@@ -10,8 +10,9 @@ public class Order {
     private Object options;
     private String address;
     private String customerid;
-    private String qty;
+    private Integer qty;
     private String orderId;
+    private String status;
 }
 
 

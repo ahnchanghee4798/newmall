@@ -55,13 +55,19 @@ public class Order  {
     
     
     
-    private String qty;
+    private Integer qty;
     
     
     
     
     
     private String orderId;
+    
+    
+    
+    
+    
+    private String status;
 
     @PostPersist
     public void onPostPersist(){

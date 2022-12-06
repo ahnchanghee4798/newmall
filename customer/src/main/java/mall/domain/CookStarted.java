@@ -13,7 +13,7 @@ public class CookStarted extends AbstractEvent {
     private String foodId;
     private String orderId;
     private Object options;
-    private String qty;
+    private Integer qty;
     private String storeId;
     private String customerId;
 }

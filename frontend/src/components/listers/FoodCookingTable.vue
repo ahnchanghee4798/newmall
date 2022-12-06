@@ -95,7 +95,7 @@
                 'foodId': '',
                 'orderId': '',
                 'options': [],
-                'qty': '',
+                'qty': 0,
                 'storeId': '',
                 'customerId': '',
             }

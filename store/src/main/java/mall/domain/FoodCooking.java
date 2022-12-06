@@ -56,7 +56,7 @@ public class FoodCooking  {
     
     
     
-    private String qty;
+    private Integer qty;
     
     
     

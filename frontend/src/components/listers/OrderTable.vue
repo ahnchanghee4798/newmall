@@ -73,6 +73,7 @@
                     { text: "customerid", value: "customerid" },
                     { text: "qty", value: "qty" },
                     { text: "orderId", value: "orderId" },
+                    { text: "status", value: "status" },
                 ],
             order : [],
             newValue: {},
@@ -94,8 +95,9 @@
                 'options': [],
                 'address': '',
                 'customerid': '',
-                'qty': '',
+                'qty': 0,
                 'orderId': '',
+                'status': '',
             }
         },
         methods: {

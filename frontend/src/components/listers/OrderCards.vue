@@ -72,8 +72,9 @@
                 'options': [],
                 'address': '',
                 'customerid': '',
-                'qty': '',
+                'qty': 0,
                 'orderId': '',
+                'status': '',
             }
         },
         methods:{
