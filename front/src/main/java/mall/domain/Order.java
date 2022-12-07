@@ -1,8 +1,8 @@
 package mall.domain;
 
 import mall.domain.OrderPlaced;
-import mall.domain.OrderCanceled;
 import mall.domain.OrderUpdated;
+import mall.domain.OrderCanceled;
 import mall.FrontApplication;
 import javax.persistence.*;
 import java.util.List;
@@ -78,13 +78,16 @@ public class Order  {
 
 
 
-        OrderCanceled orderCanceled = new OrderCanceled(this);
-        orderCanceled.publishAfterCommit();
-
-
-
         OrderUpdated orderUpdated = new OrderUpdated(this);
         orderUpdated.publishAfterCommit();
+
+    }
+    @PreRemove
+    public void onPreRemove(){
+
+
+        OrderCanceled orderCanceled = new OrderCanceled(this);
+        orderCanceled.publishAfterCommit();
 
     }
 
